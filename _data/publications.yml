@@ -5,6 +5,7 @@ main:
     conference_short: BMVC
     conference: British Machine Vision Conference <strong>(BMVC)</strong>, 2025.
     pdf: 
+    page: https://finallyupper.github.io/beyond-softmax/
     code: https://github.com/finallyupper/beyond-softmax
     image: ./assets/img/teaser_arch_beyond_softmax.png
 
