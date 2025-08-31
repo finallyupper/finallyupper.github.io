@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<meta property="og:url" content="https://finallyupper.github.io/beyond-softmax/">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Beyond Softmax: Dual-Branch Sigmoid Architecture for Accurate Class Activation Maps">
+  <meta name="keywords" content="WSOL, XAI, CAM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond Softmax</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="shortcut icon" href="/lab/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/lab/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/lab/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/lab/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/lab/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/lab/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/lab/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/lab/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/lab/favicons/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/lab/favicons/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/lab/favicons/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/lab/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/lab/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/lab/favicons/favicon-32x32.png" sizes="32x32">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript"
+    src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+</head>
+<body>
+
+
+  </div>
+</nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Beyond Softmax:<br>
+              Dual-Branch Sigmoid Architecture for Accurate Class Activation Maps</h1>
+            <div class="is-size-4 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=wV93bjQAAAAJ&hl=en" target="_blank">Yoojin Oh</a>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=VJgEpXEAAAAJ&hl=en" target="_blank">Junhyug Noh</a>,</span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block" style="color:black"> Ewha Womans University </span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <!-- PDF Link. -->
+                      <span class="link-block">
+                        <a href="" 
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                              <i class="ai ai-arxiv"></i>
+                          </span>
+                          <span>arXiv</span>
+                        </a>
+                      </span>
+                  
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/finallyupper/beyond-softmax"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/teaser.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+      <h2 class="subtitle has-text-centered">
+        <!-- Shatter and Gather -->
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p style="font-size:18px;">
+            Class Activation Mapping (CAM) and its extensions have become indispensable
+            tools for visualizing the evidence behind deep network predictions. However, by relying on 
+            a final softmax classifier, these methods suffer from two fundamental distortions: 
+            additive logit shifts that arbitrarily bias importance scores, and sign collapse that
+            conflates excitatory and inhibitory features. 
+          </p>
+          <p style="font-size:18px;">
+            We propose a simple, architecture-agnostic dual-branch sigmoid head that 
+            decouples localization from classification. Given any pretrained model, we clone 
+            its classification head into a parallel branch ending in perclass sigmoid outputs, 
+            freeze the original softmax head, and fine-tune only the sigmoid branch with 
+            class-balanced binary supervision. At inference, softmax retains recognition accuracy, 
+            while class evidence maps are generated from the sigmoid branch — preserving both magnitude 
+            and sign of feature contributions. Our method integrates seamlessly with most CAM variants 
+            and incurs negligible overhead. Extensive evaluations on fine-grained tasks (CUB-200-2011, Stanford Cars) 
+            and WSOL benchmarks (ImageNet-1K, OpenImages-30K) show improved explanation fidelity and consistent
+            Top-1 Localization gains — without any drop in classification accuracy.
+            <br>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+
+<section class="section hero">
+    <div class="container is-max-desktop">
+
+    <!--/ Problems. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Problems</h2>
+      </div>
+    </div>
+
+    <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-14 has-text-centered">
+            <img src="./static/images/problem.png"/>
+          </div>
+        </div>
+      <div class="content has-text-justified">
+      <p style=" font-size:18px; margin-bottom: 20px;">
+        All CAM variants  ultimately form a heatmap by linearly combining feature maps with per-channel weights. 
+        However, when weights are derived from softmax-based scores, softmax’s invariances break these assumptions:
+        <br><strong>(a) Additive Logit Shift.</strong> Adding a constant &delta; to all feature weights leaves the softmax probability y<sub>k</sub>
+        unchanged but disproportionately amplifies feature f<sub>i</sub> in the heatmap.
+        <br><strong>(b) Sign Collapse.</strong> Subtracting &delta; flips formerly positive feature weights to negative without affecting y<sub>k</sub>,
+        causing previously highlighted regions to vanish. 
+        <br>In both cases, identical classification outputs produce drastically different localization maps.      
+        <br>
+      </p>
+      </div>
+      <!-- <br/> -->
+      <!--/ Interpolating. -->
+          
+    </div>
+</section>
+
+
+<section class="section hero">
+    <div class="container is-max-desktop">
+
+    <!-- Overall Architecture. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Our Approach</h2>
+
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Interpolating states</h3> -->
+          <div class="column is-14 has-text-centered">
+            <img src="./static/images/inference_steps.gif" />
+          </div>
+
+        <div class="content has-text-justified">
+          <p style=" font-size:18px; margin-bottom: 20px;">
+            To disentangle these distortions, we introduce a dual-branch sigmoid head that decouples
+            localization from classification.
+            <br><strong>Training.</strong> Starting from a pretrained classifier, we copy its head h into a new branch &tilde;h with 
+            identical architecture, but fresh parameters. The sigmoid branch outputs class-wise scores. Here, 
+            the original softmax head and backbone remain frozen.
+
+            <br><strong>Inference.</strong> After feature extraction, the frozen softmax head predicts the class label k<sup>*</sup></sub>. In parallel, any CAM variant computes
+            per-channel importance scores w&#x0303;<sub>k<sup>*</sup></sub> (via weights or gradients) for s<sub>k<sup>*</sup></sub>, 
+            which are rectified by clamping to positive values. These positive-only scores are then linearly combined with
+            the feature maps to produce the final class evidence heatmap M&#x0303;<sub>k<sup>*</sup></sub>.
+          </p>
+        </div>
+        <!-- <br/> -->
+        <!--/ Interpolating. -->
+
+
+      </div>
+    </div>
+</section>
+
+
+<!-- Experimental Results 1 -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+
+      <div class="column is-four-sixths">
+        <h2 class="title is-3">Quanitative Results</h2>
+        <h2 class="title is-4" style="margin-bottom: 30px;">1. Fine-Grained Explanation Fidelity</h2>
+
+        <div class="content has-text-justified" style="margin-top:-15px; margin-bottom: 30px;">
+          <img src="static/images/table1.png" alt="table1_xai"/>
+          <p style="margin-top:5px; margin-bottom: 10px; font-size:18px;">
+             Fine-grained explanation fidelity on CUB-200-2011 and Stanford Cars. For % Average Drop (lower is better) and % Increase in Confidence (higher is better), improved values
+              are shown in blue and worsened values in red; parentheses indicate the change relative to the
+              baseline.
+          </p>
+        </div>
+
+        <h2 class="title is-4" style="margin-bottom: 30px;">2. Weakly-Supervised Object Localization</h2>
+
+        <div class="content has-text-justified" style="margin-top:-15px; margin-bottom: 30px;">
+          <img src="static/images/table2.png" alt="table2_wsol"/>
+          <p style="margin-top:5px; margin-bottom: 10px; font-size:18px;">
+             WSOL results on ImageNet-1K and OpenImages-30K. For each base method we
+              shade the baseline row in gray; “+ Ours” rows report updated scores with their &Delta; shown in
+              parentheses (blue for gains, red for drops).
+          </p>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Experimental Results 2 -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+
+      <div class="column is-four-sixths">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <h2 class="title is-4" style="margin-bottom: 30px;">1. Fine-Grained Explanation Fidelity</h2>
+
+        <div class="content has-text-justified" style="margin-top:-15px; margin-bottom: 30px;">
+          <img src="static/images/qual_all_xai.png" alt="qual_all_xai"/>
+          <p style="margin-top:5px; margin-bottom: 10px; font-size:18px;">
+              Additional qualitative explanation examples on fine-grained datasets: VGG-16 on
+              CUB-200-2011 (top) and ResNet-50 on Stanford Cars (bottom).
+          </p>
+        </div>
+
+        <h2 class="title is-4" style="margin-bottom: 30px;">2. Weakly-Supervised Object Localization</h2>
+
+        <div class="content has-text-justified" style="margin-top:-15px; margin-bottom: 30px;">
+          <img src="static/images/qual_all_imagenet.png" alt="qual_all_imagenet"/>
+          <p style="margin-top:5px; margin-bottom: 10px; font-size:18px;">
+             Additional qualitative WSOL examples on ImageNet-1K using VGG-16 (top),
+              ResNet-50 (middle), and InceptionV3 (bottom). Predicted bounding boxes are shown in
+              green, and ground-truth boxes in red.
+          </p>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title"><a id="bibtex">BibTeX</a></h2>
+    <pre><code>
+        @article{oh:2025:beyondsoftmax,
+          title = {Beyond Softmax: Dual-Branch Sigmoid Architecture for Accurate Class Activation Maps},
+          author = {Oh, Yoojin and Noh, Junhyug},
+          journal = {British Machine Vision Conference (BMVC)},
+          year = {2025}
+        }
+
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+        <p>
+          Website adapted from the following <a href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
