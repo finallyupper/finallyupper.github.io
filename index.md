@@ -10,8 +10,8 @@ I’d love to connect and talk about research, so feel free to reach out via ema
 
 ## News
 
-- **[2025.06]** A paper ([Beyond Softmax]()) is accepted to BMVC 2025.
-- **[2025.07]** A paper ([SteeringTTA](https://openreview.net/pdf?id=iV0WBCDGcx)) is accepted to ICML PUT Workshop 2025.
+- **[2025.07]** A paper ([Beyond Softmax]()) is accepted to BMVC 2025.
+- **[2025.06]** A paper ([SteeringTTA](https://openreview.net/pdf?id=iV0WBCDGcx)) is accepted to ICML PUT Workshop 2025.
 
 {% include_relative _includes/publications.md %}
 
