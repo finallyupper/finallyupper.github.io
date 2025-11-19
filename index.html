@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Yoojin Oh</title>
+
+    <meta name="author" content="Yoojin Oh">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
+    <style>
+      .publication-image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .publication-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      
+      .publication-row {
+        display: flex;
+        align-items: stretch;
+      }
+      
+      .publication-row td {
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Yoojin Oh
+                </p>
+                <p>
+    I'm an UG student at <a href="https://www.ewha.ac.kr/ewha/index.do">Ewha Womans University</a> majoring in Artificial Intelligence, 
+    and will be starting my MS at <a href="https://gsai.kaist.ac.kr/">KAIST AI</a> from Spring 2026. 
+    I'm currently interested in steering diffusion sampling trajectories at inference time 
+    to guide image generation in desired directions without additional training. 
+    My previous research experience includes Weakly-Supervised Object Localization (WSOL) and self-supervised Multi-modal Learning.
+
+                </p>
+                <p style="text-align:center">
+                  <a href=dianaoh1021@gmail.com">Email</a> &nbsp;/&nbsp;
+                  <a href="data/251119_cv.pdf">CV</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=wV93bjQAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/finallyupper/">Github</a>
+
+                </p>
+              </td>
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                <a href="images/profile_v2.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/profile_v2.jpg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>News</h2>
+                <p> 
+                <div class="news-item">
+                  · <span class="news-date"><strong>[2025.07]</strong> </span>   A paper (<a href="https://arxiv.org/abs/2511.05590">Beyond Softmax</a>) is accepted to BMVC 2025.
+                </div>
+                <div class="news-item">
+                  · <span class="news-date"><strong>[2025.06]</strong></span> A paper (<a href="https://arxiv.org/abs/2510.14634">SteeringTTA</a>) is accepted to ICML PUT Workshop 2025.
+                </div>
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+   
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Publications</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+<tr class="publication-row" onmouseout="nexf_stop()" onmouseover="nexf_start()">
+      <td style="padding:16px;width:25%;vertical-align:middle">
+        <div class="publication-image">
+          <div class="two" id='beyond_softmax_image'>
+					</div>
+          <img src='images/publications/teaser_arch_beyond_softmax.png'>
+        </div>
+        <script type="text/javascript">
+          function nexf_start() {
+            document.getElementById('beyond_softmax_image').style.opacity = "1";
+          }
+
+          function nexf_stop() {
+            document.getElementById('beyond_softmax_image').style.opacity = "0";
+          }
+          nexf_stop()
+        </script>
+      </td>
+      <td style="padding:16px;width:75%;vertical-align:middle">
+        <a href="https://bmvc2025.bmva.org/proceedings/416/">
+          <span class="papertitle">Beyond Softmax: Dual-Branch Sigmoid Architecture for Accurate Class Activation Maps</span>
+        </a>
+        <br>
+        <strong>Yoojin Oh</strong>, Junhyug Noh
+        <br>
+        <em>BMVC</em>, 2025
+        <br>
+        <a href="https://finallyupper.github.io/beyond-softmax/">project page</a>
+        /
+        <a href="https://arxiv.org/abs/2511.05590">arXiv</a>
+        /
+        <a href="https://github.com/finallyupper/beyond-softmax">code</a>
+        <p>
+          To mitigate two fundamental softmax-induced distortions: Additive Logit Shift and Sign Collapse, 
+          we propose a simple, architecture-agnostic dual-branch sigmoid head that decouples localization from classification. 
+        </p>
+      </td>
+    </tr>
+	
+    <tr class="publication-row" onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()">
+      <td style="padding:16px;width:25%;vertical-align:middle">
+        <div class="publication-image">
+          <div class="two" id='steeringtta_image'>
+          </div>
+          <img src='images/publications/teaser_steeringtta.png'>
+        </div>
+        <script type="text/javascript">
+          function bolt3d_start() {
+            document.getElementById('steeringtta_image').style.opacity = "1";
+          }
+
+          function bolt3d_stop() {
+            document.getElementById('steeringtta_image').style.opacity = "0";
+          }
+          bolt3d_stop()
+        </script>
+      </td>
+      <td style="padding:16px;width:75%;vertical-align:middle">
+        <a href="https://icml.cc/virtual/2025/48067">
+          <span class="papertitle">SteeringTTA: Guiding Diffusion Trajectories for Robust Test-Time-Adaptation
+          </span>
+        </a>
+        <br>
+        Jihyun Yu, <strong>Yoojin Oh</strong>, Wonho Bae, Mingyu Kim, Junhyug Noh
+        <br>
+        <em>ICML PUT Workshop</em>, 2025
+        <br>
+        <a href="https://arxiv.org/abs/2510.14634">arXiv</a>
+        <p>
+          We propose SteeringTTA, an inference-only test-time adaptation framework that applies Feynman-Kac steering to diffusion-based input adaptation. 
+          Using pseudo-label driven rewards and multiple particle trajectories, it balances exploration and confidence through top-k probabilities and entropy scheduling. 
+        </p>
+      </td>
+    </tr>
+
+  
+    
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:10px">
+                <br>
+                <p style="text-align:left;font-size:small;">
+                  Thank you for providing a <a href="https://github.com/jonbarron/jonbarron_website">source code</a>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

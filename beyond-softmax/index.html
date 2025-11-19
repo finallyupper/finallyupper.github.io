@@ -90,7 +90,7 @@
                     <div class="publication-links">
                       <!-- PDF Link. -->
                       <span class="link-block">
-                        <a href="" 
+                        <a href="https://arxiv.org/abs/2511.05590" 
                           class="external-link button is-normal is-rounded is-dark">
                           <span class="icon">
                               <i class="ai ai-arxiv"></i>
@@ -99,7 +99,24 @@
                         </a>
                       </span>
                   
+                      <span class="link-block">
+                        <a href="https://bmva-archive.org.uk/bmvc/2025/assets/papers/Paper_416/poster.pdf" 
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="far fa-file-pdf"></i> </span>
+                          <span>Poster</span>
+                        </a>
+                      </span>
 
+                      <span class="link-block">
+                        <a href="https://bmva-archive.org.uk/bmvc/2025/assets/papers/Paper_416/video.mp4" 
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                              <i class="fas fa-video"></i></span>
+                          <span>Video</span>
+                        </a>
+                      </span>
+                      
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/finallyupper/beyond-softmax"
@@ -183,14 +200,16 @@
         </div>
       <div class="content has-text-justified">
       <p style=" font-size:18px; margin-bottom: 20px;">
-        All CAM variants  ultimately form a heatmap by linearly combining feature maps with per-channel weights. 
-        However, when weights are derived from softmax-based scores, softmax’s invariances break these assumptions:
-        <br><strong>(a) Additive Logit Shift.</strong> Adding a constant &delta; to all feature weights leaves the softmax probability y<sub>k</sub>
-        unchanged but disproportionately amplifies feature f<sub>i</sub> in the heatmap.
-        <br><strong>(b) Sign Collapse.</strong> Subtracting &delta; flips formerly positive feature weights to negative without affecting y<sub>k</sub>,
-        causing previously highlighted regions to vanish. 
-        <br>In both cases, identical classification outputs produce drastically different localization maps.      
-        <br>
+        All CAM variants ultimately form heatmaps by linearly combining feature maps with per-channel weights.  
+        For this linear combination to be semantically valid, the weights w<sub>i,k</sub> should satisfy two tacit requirements:
+        (i) <strong>relative magnitude semantics</strong> and (ii) <strong>sign semantics</strong>.
+
+        However, when weights are derived from softmax-based classifiers, softmax invariances fundamentally break these assumptions:
+        <br><br><strong>(a) Additive Logit Shift.</strong> Adding a constant &delta; to all weights connected to feature i leaves the softmax probability y<sub>k</sub>
+        unchanged, but arbitrarily brightens or dims feature f<sub>i</sub>'s contribution in the heatmap.
+        <br><strong>(b) Sign Collapse.</strong> Subtracting a large &delta; flips all weight signs without affecting y<sub>k</sub>,
+        completely inverting the CAM contributions—previously highlighted regions now appear as suppressors, and vice versa.
+        <br><br>In both cases, identical classification outputs produce drastically different localization maps, revealing that softmax-derived weights lack reliable semantic meaning for visualization.
       </p>
       </div>
       <!-- <br/> -->
@@ -243,7 +262,7 @@
     <div class="columns is-centered has-text-centered">
 
       <div class="column is-four-sixths">
-        <h2 class="title is-3">Quanitative Results</h2>
+        <h2 class="title is-3">Quantitative Results</h2>
         <h2 class="title is-4" style="margin-bottom: 30px;">1. Fine-Grained Explanation Fidelity</h2>
 
         <div class="content has-text-justified" style="margin-top:-15px; margin-bottom: 30px;">
@@ -314,12 +333,14 @@
   <div class="container is-max-desktop content">
     <h2 class="title"><a id="bibtex">BibTeX</a></h2>
     <pre><code>
-        @article{oh:2025:beyondsoftmax,
-          title = {Beyond Softmax: Dual-Branch Sigmoid Architecture for Accurate Class Activation Maps},
-          author = {Oh, Yoojin and Noh, Junhyug},
-          journal = {British Machine Vision Conference (BMVC)},
-          year = {2025}
-        }
+        @inproceedings{Oh_2025_BMVC,
+          author    = {Yoojin Oh and Junhyug Noh},
+          title     = {Beyond Softmax: Dual-Branch Sigmoid Architecture for Accurate Class Activation Maps},
+          booktitle = {36th British Machine Vision Conference 2025, {BMVC} 2025, Sheffield, UK, November 24-27, 2025},
+          publisher = {BMVA},
+          year      = {2025},
+          url       = {https://bmva-archive.org.uk/bmvc/2025/assets/papers/Paper_416/paper.pdf}
+          }
 
     </code></pre>
   </div>
