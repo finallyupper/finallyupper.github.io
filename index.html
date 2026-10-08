@@ -6,7 +6,9 @@
   <meta name="description" content="Academic homepage of Yoojin Oh">
   <meta name="author" content="Yoojin Oh">
   <title>Yoojin Oh</title>
-  <link rel="icon" href="images/favicon/favicon.ico">
+  <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg">
+  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&amp;display=swap" rel="stylesheet">
@@ -16,7 +18,7 @@
   <main class="container">
     <header class="header">
       <a class="profile-photo" href="images/profile_v1.jpg" aria-label="Open profile photo">
-        <img src="images/profile_v1.jpg" alt="Yoojin Oh">
+        <img src="images/profile_v2.jpg" alt="Yoojin Oh">
       </a>
       <div class="main-description">
         <h1>Yoojin Oh</h1>
@@ -62,6 +64,10 @@
     <section class="docs-section" id="news">
       <h2>News</h2>
       <div class="news-item">
+        <time datetime="2026-10">[2026.10]</time>
+        <span>Our paper <a href="https://arxiv.org/abs/2610.02832" target="_blank" rel="noopener noreferrer">FastOPD</a> was released on arXiv.</span>
+      </div>
+      <div class="news-item">
         <time datetime="2026-03">[2026.03]</time>
         <span>I started my M.S. at the <a href="https://gsai.kaist.ac.kr/">KAIST Graduate School of AI</a> (Advisor: <a href="https://scholar.google.com/citations?user=HNMjoNEAAAAJ">Prof. Jong Chul Ye</a>).</span>
       </div>
@@ -69,31 +75,57 @@
 
     <section class="docs-section" id="publications">
       <h2>Publications</h2>
+      <p class="section-note"><sup>*</sup> Equal contribution</p>
       <div class="tab-nav" role="tablist" aria-label="Publication filters">
         <button class="button active" type="button" role="tab" aria-selected="true" aria-controls="papers-selected" data-tab="papers-selected">Selected</button>
         <button class="button" type="button" role="tab" aria-selected="false" aria-controls="papers-all" data-tab="papers-all">All</button>
       </div>
 
       <div class="tab-pane active" id="papers-selected" role="tabpanel">
-        <article class="paper">
-          <p class="title"><strong>Beyond Softmax: Dual-Branch Sigmoid Architecture for Accurate Class Activation Maps</strong></p>
-          <p class="authors"><strong><u>Yoojin Oh</u></strong>, Junhyug Noh</p>
-          <p class="venue"><em>BMVC, 2025</em></p>
-          <div class="paper-buttons">
-            <a class="button" href="https://bmvc2025.bmva.org/proceedings/416/" target="_blank" rel="noopener noreferrer">Paper</a>
-            <a class="button" href="https://arxiv.org/abs/2511.05590" target="_blank" rel="noopener noreferrer">Arxiv</a>
-            <a class="button" href="https://finallyupper.github.io/beyond-softmax/">Website</a>
-            <a class="button" href="https://github.com/finallyupper/beyond-softmax" target="_blank" rel="noopener noreferrer">Code</a>
+        <article class="paper publication-paper">
+          <a class="paper-teaser" href="https://fastopd.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open the FastOPD project website">
+            <img src="images/publications/teaser_fastopd.png" width="1534" height="530" loading="lazy" alt="Comparison between DiffusionOPD, which queries the teacher at every denoising step, and FastOPD, which queries it at a single state reached by a flow-map jump">
+          </a>
+          <div class="paper-details">
+            <p class="title"><strong>FastOPD: On-Policy Distillation for Lightweight VLA Deployment</strong></p>
+            <p class="authors"><strong><u>Yoojin Oh</u><sup>*</sup></strong>, Jeongsol Kim<sup>*</sup>, Yeonwoo Seo, Jangho Park, Seonghyun Jin, Sunwoo Park, Youngmin Kim, Youngjun Jun, Kyumin Choi, Jong Chul Ye</p>
+            <p class="venue"><em>arXiv preprint, 2026</em></p>
+            <div class="paper-buttons">
+              <a class="button" href="https://arxiv.org/abs/2610.02832" target="_blank" rel="noopener noreferrer">Arxiv</a>
+              <a class="button" href="https://fastopd.github.io/" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
           </div>
         </article>
 
-        <article class="paper">
-          <p class="title"><strong>SteeringTTA: Guiding Diffusion Trajectories for Robust Test-Time-Adaptation</strong></p>
-          <p class="authors">Jihyun Yu, <strong><u>Yoojin Oh</u></strong>, Wonho Bae, Mingyu Kim, Junhyug Noh</p>
-          <p class="venue"><em>ICML PUT Workshop, 2025</em></p>
-          <div class="paper-buttons">
-            <a class="button" href="https://icml.cc/virtual/2025/48067" target="_blank" rel="noopener noreferrer">Paper</a>
-            <a class="button" href="https://arxiv.org/abs/2510.14634" target="_blank" rel="noopener noreferrer">Arxiv</a>
+        <article class="paper publication-paper">
+          <a class="paper-teaser" href="https://finallyupper.github.io/beyond-softmax/" aria-label="Open the Beyond Softmax project website">
+            <img src="images/publications/teaser_arch_beyond_softmax.png" width="1308" height="703" loading="lazy" alt="Beyond Softmax dual-branch sigmoid architecture overview">
+          </a>
+          <div class="paper-details">
+            <p class="title"><strong>Beyond Softmax: Dual-Branch Sigmoid Architecture for Accurate Class Activation Maps</strong></p>
+            <p class="authors"><strong><u>Yoojin Oh</u></strong>, Junhyug Noh</p>
+            <p class="venue"><em>BMVC, 2025</em></p>
+            <div class="paper-buttons">
+              <a class="button" href="https://bmvc2025.bmva.org/proceedings/416/" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a class="button" href="https://arxiv.org/abs/2511.05590" target="_blank" rel="noopener noreferrer">Arxiv</a>
+              <a class="button" href="https://finallyupper.github.io/beyond-softmax/">Website</a>
+              <a class="button" href="https://github.com/finallyupper/beyond-softmax" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="paper publication-paper">
+          <a class="paper-teaser" href="https://arxiv.org/abs/2510.14634" target="_blank" rel="noopener noreferrer" aria-label="Open the SteeringTTA paper on arXiv">
+            <img src="images/publications/teaser_steeringtta.png" width="4050" height="1681" loading="lazy" alt="SteeringTTA diffusion guidance method and qualitative results">
+          </a>
+          <div class="paper-details">
+            <p class="title"><strong>SteeringTTA: Guiding Diffusion Trajectories for Robust Test-Time-Adaptation</strong></p>
+            <p class="authors">Jihyun Yu, <strong><u>Yoojin Oh</u></strong>, Wonho Bae, Mingyu Kim, Junhyug Noh</p>
+            <p class="venue"><em>ICML PUT Workshop, 2025</em></p>
+            <div class="paper-buttons">
+              <a class="button" href="https://icml.cc/virtual/2025/48067" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a class="button" href="https://arxiv.org/abs/2510.14634" target="_blank" rel="noopener noreferrer">Arxiv</a>
+            </div>
           </div>
         </article>
       </div>
@@ -103,7 +135,6 @@
           <p class="title"><strong>Slot-based Audio-visual Matching for Multi-source Sound Localization</strong></p>
           <p class="authors">Inho Kim<sup>*</sup>, <strong><u>Yoojin Oh</u><sup>*</sup></strong>, Suha Kwak</p>
           <p class="venue"><em>Unpublished work</em></p>
-          <p class="author-note"><sup>*</sup> Equal contribution</p>
         </article>
       </div>
     </section>
