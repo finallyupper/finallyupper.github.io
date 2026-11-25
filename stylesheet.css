@@ -41,12 +41,18 @@ a:focus { color: #0fa0ce; }
   text-align: left;
 }
 
+.profile-photo {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
 .profile-photo img {
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 1rem;
+  transform: scale(1.3);
+  transform-origin: 50% 40%;
 }
 
 .main-description h1 {

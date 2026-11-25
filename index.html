@@ -17,9 +17,9 @@
 <body>
   <main class="container">
     <header class="header">
-      <a class="profile-photo" href="images/profile_v2.jpg" aria-label="Open profile photo">
+      <div class="profile-photo">
         <img src="images/profile_v2.jpg" alt="Yoojin Oh">
-      </a>
+      </div>
       <div class="main-description">
         <h1>Yoojin Oh</h1>
         <p>Graduate student at KAIST</p>
@@ -63,6 +63,10 @@
     <section class="docs-section" id="news">
       <h2>News</h2>
       <div class="news-item">
+        <time datetime="2026-11">[2026.11]</time>
+        <span>Our paper <a href="https://arxiv.org/abs/2611.30534" target="_blank" rel="noopener noreferrer">DelayOPSD</a> was released on arXiv.</span>
+      </div>
+      <div class="news-item">
         <time datetime="2026-10">[2026.10]</time>
         <span>Our paper <a href="https://arxiv.org/abs/2610.02832" target="_blank" rel="noopener noreferrer">FastOPD</a> was released on arXiv.</span>
       </div>
@@ -100,6 +104,21 @@
             <div class="paper-buttons">
               <a class="button" href="https://arxiv.org/abs/2610.02832" target="_blank" rel="noopener noreferrer">Arxiv</a>
               <a class="button" href="https://fastopd.github.io/" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="paper publication-paper">
+          <a class="paper-teaser" href="https://github.com/present091/DelayOPSD" target="_blank" rel="noopener noreferrer" aria-label="Open the DelayOPSD code repository on GitHub">
+            <img src="images/publications/teaser_delayopsd.png" width="1376" height="794" loading="lazy" alt="Real-robot rollouts and LIBERO results comparing synchronous execution, asynchronous execution, and DelayOPSD in accuracy, speed, and smoothness">
+          </a>
+          <div class="paper-details">
+            <p class="title"><strong>DelayOPSD: On-Policy Self-Distillation from a Synchronous Teacher for Real-time Asynchronous Policies</strong></p>
+            <p class="authors">Hyeonjae Kim<sup>*</sup>, Jeongsol Kim<sup>*</sup>, Sunwoo Park, Chanyu Moon, <strong><u>Yoojin Oh</u></strong>, Youngjun Jun, Kyumin Choi, Jong Chul Ye</p>
+            <p class="venue"><em>arXiv preprint, 2026</em></p>
+            <div class="paper-buttons">
+              <a class="button" href="https://arxiv.org/abs/2611.30534" target="_blank" rel="noopener noreferrer">Arxiv</a>
+              <a class="button" href="https://github.com/present091/DelayOPSD" target="_blank" rel="noopener noreferrer">Code</a>
             </div>
           </div>
         </article>
